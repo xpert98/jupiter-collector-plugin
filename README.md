@@ -1,0 +1,1 @@
+# jupiter-collector-plugin
