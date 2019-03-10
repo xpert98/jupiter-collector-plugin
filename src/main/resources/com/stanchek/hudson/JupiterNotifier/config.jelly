@@ -1,0 +1,8 @@
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+    <f:entry title="${%App Name}" field="appName">
+      <f:textbox/>
+    </f:entry>
+    <f:entry title="${%Primary Owner}" field="primaryOwner">
+      <f:textbox/>
+    </f:entry>
+</j:jelly>

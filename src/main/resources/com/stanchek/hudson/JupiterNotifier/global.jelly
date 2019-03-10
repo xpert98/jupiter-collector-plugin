@@ -1,0 +1,11 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+         xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:section title="Jupiter Collector">
+	  <f:entry title="${%Collector URL}" field="collectorUrl">
+	    <f:textbox />
+	  </f:entry>
+	  <f:entry title="${%Collector API Token}" field="collectorApiToken">
+	    <f:password />
+	  </f:entry>
+  </f:section>
+</j:jelly>
