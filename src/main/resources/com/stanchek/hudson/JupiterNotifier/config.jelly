@@ -1,8 +1,77 @@
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
-    <f:entry title="${%App Name}" field="appName">
+    <f:entry title="Common App Name" field="commonName">
       <f:textbox/>
     </f:entry>
-    <f:entry title="${%Primary Owner}" field="primaryOwner">
+    <f:entry title="Primary Owner" field="primaryOwner">
       <f:textbox/>
     </f:entry>
+    
+    <f:advanced>
+      <f:section title="Additional Fields">
+      <f:entry title="App Aliases" field="aliases">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="App Description" field="description">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Code Repo URL" field="codeRepoUrl">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Binary Repo URL" field="binaryRepoUrl">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Primary Code Language" field="primaryLanguage">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Secondary Code Languages" field="secondaryLanguages">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Type of App" field="type">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Secondary Owner" field="secondaryOwners">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Business Unit" field="businessUnit">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Exposure" field="exposure">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Number of Users" field="numUsers">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Data Classification Level" field="dataClassification">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Deployment Environment" field="deploymentEnv">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Deployment Environment URL" field="deploymentEnvUrl">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Risk Level" field="riskLevel">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Applicable Regulations" field="regulations">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Chat Channel" field="chatChannel">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Scrum Board URL" field="agileScrumBoardUrl">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Build Server URL" field="buildServerUrl">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Age" field="age">
+        <f:textbox/>
+      </f:entry>
+      <f:entry title="Lifecycle Stage" field="lifecycleStage">
+        <f:textbox/>
+      </f:entry>
+      </f:section>
+    </f:advanced>
+    
 </j:jelly>

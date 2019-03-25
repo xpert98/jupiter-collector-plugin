@@ -30,21 +30,156 @@ public class JupiterNotifier extends Notifier {
 	private static final Logger LOGGER = Logger
 			.getLogger(JupiterNotifier.class.getName());
 
-	private final String appName;
+	private final String commonName;
 	private final String primaryOwner;
+	private final String aliases;
+	private final String description;
+	private final String codeRepoUrl;
+	private final String binaryRepoUrl;
+	private final String primaryLanguage;
+	private final String secondaryLanguages;
+	private final String type;
+	private final String secondaryOwners;
+	private final String businessUnit;
+	private final String exposure;
+	private final int numUsers;
+	private final String dataClassification;
+	private final String deploymentEnv;
+	private final String deploymentEnvUrl;
+	private final String riskLevel;
+	private final String regulations;
+	private final String chatChannel;
+	private final String agileScrumBoardUrl;
+	private final String buildServerUrl;
+	private final String age;
+	private final String lifecycleStage;
 
 	@DataBoundConstructor
-	public JupiterNotifier(String appName, String primaryOwner) {
-		this.appName = appName;
+	public JupiterNotifier(String commonName, String primaryOwner, 
+			String aliases, String description, String codeRepoUrl,
+			String binaryRepoUrl, String primaryLanguage,
+			String secondaryLanguages, String type, String secondaryOwners,
+			String businessUnit, String exposure, int numUsers,
+			String dataClassification, String deploymentEnv,
+			String deploymentEnvUrl, String riskLevel,
+			String regulations, String chatChannel,
+			String agileScrumBoardUrl, String buildServerUrl,
+			String age, String lifecycleStage) {
+		this.commonName = commonName;
 		this.primaryOwner = primaryOwner;
+		this.aliases = aliases;
+		this.description = description;
+		this.codeRepoUrl = codeRepoUrl;
+		this.binaryRepoUrl = binaryRepoUrl;
+		this.primaryLanguage = primaryLanguage;
+		this.secondaryLanguages = secondaryLanguages;
+		this.type = type;
+		this.secondaryOwners = secondaryOwners;
+		this.businessUnit = businessUnit;
+		this.exposure = exposure;
+		this.numUsers = numUsers;
+		this.dataClassification = dataClassification;
+		this.deploymentEnv = deploymentEnv;
+		this.deploymentEnvUrl = deploymentEnvUrl;
+		this.riskLevel = riskLevel;
+		this.regulations = regulations;
+		this.chatChannel = chatChannel;
+		this.agileScrumBoardUrl = agileScrumBoardUrl;
+		this.buildServerUrl = buildServerUrl;
+		this.age = age;
+		this.lifecycleStage = lifecycleStage;
 	}
 
-	public String getAppName() {
-		return appName;
+	public String getCommonName() {
+		return commonName;
 	}
 	
 	public String getPrimaryOwner() {
 		return primaryOwner;
+	}
+	
+	public String getAliases() {
+		return aliases;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public String getCodeRepoUrl() {
+		return codeRepoUrl;
+	}
+
+	public String getBinaryRepoUrl() {
+		return binaryRepoUrl;
+	}
+	
+	public String getPrimaryLanguage() {
+		return primaryLanguage;
+	}
+	
+	public String getSecondaryLanguages() {
+		return secondaryLanguages;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	
+	public String getSecondaryOwners() {
+		return secondaryOwners;
+	}
+	
+	public String getBusinessUnit() {
+		return businessUnit;
+	}
+	
+	public String getExposure() {
+		return exposure;
+	}
+	
+	public int getNumUsers() {
+		return numUsers;
+	}
+	
+	public String getDataClassification() {
+		return dataClassification;
+	}
+	
+	public String getDeploymentEnv() {
+		return deploymentEnv;
+	}
+	
+	public String getDeploymentEnvUrl() {
+		return deploymentEnvUrl;
+	}
+	
+	public String getRiskLevel() {
+		return riskLevel;
+	}
+	
+	public String getRegulations() {
+		return regulations;
+	}
+	
+	public String getChatChannel() {
+		return chatChannel;
+	}
+	
+	public String getAgileScrumBoardUrl() {
+		return agileScrumBoardUrl;
+	}
+	
+	public String getBuildServerUrl() {
+		return buildServerUrl;
+	}
+	
+	public String getAge() {
+		return age;
+	}
+	
+	public String getLifecycleStage() {
+		return lifecycleStage;
 	}
 	
 	public BuildStepMonitor getRequiredMonitorService() {
@@ -56,9 +191,30 @@ public class JupiterNotifier extends Notifier {
 			BuildListener listener) throws InterruptedException, IOException {
 		
         JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
-        if (appName != null) {
-            jsonObjectBuilder.add("commonName", appName);
+        if (commonName != null) {
+            jsonObjectBuilder.add("commonName", commonName);
             jsonObjectBuilder.add("primaryOwner", primaryOwner);
+            jsonObjectBuilder.add("aliases", aliases);
+            jsonObjectBuilder.add("description", description);
+            jsonObjectBuilder.add("codeRepoUrl", codeRepoUrl);
+            jsonObjectBuilder.add("binaryRepoUrl", binaryRepoUrl);
+            jsonObjectBuilder.add("primaryLanguage", primaryLanguage);
+            jsonObjectBuilder.add("secondaryLanguages", secondaryLanguages);
+            jsonObjectBuilder.add("type", type);
+            jsonObjectBuilder.add("secondaryOwners", secondaryOwners);
+            jsonObjectBuilder.add("businessUnit", businessUnit);
+            jsonObjectBuilder.add("exposure", exposure);
+            jsonObjectBuilder.add("numUsers", numUsers);
+            jsonObjectBuilder.add("dataClassification", dataClassification);
+            jsonObjectBuilder.add("deploymentEnv", deploymentEnv);
+            jsonObjectBuilder.add("deploymentEnvUrl", deploymentEnvUrl);
+            jsonObjectBuilder.add("riskLevel", riskLevel);
+            jsonObjectBuilder.add("regulations", regulations);
+            jsonObjectBuilder.add("chatChannel", chatChannel);
+            jsonObjectBuilder.add("agileScrumBoardUrl", agileScrumBoardUrl);
+            jsonObjectBuilder.add("buildServerUrl", buildServerUrl);
+            jsonObjectBuilder.add("age", age);
+            jsonObjectBuilder.add("lifecycleStage", lifecycleStage);
         }
         JsonObject jsonObject = jsonObjectBuilder.build();
         byte[] payloadBytes = jsonObject.toString().getBytes(StandardCharsets.UTF_8);
