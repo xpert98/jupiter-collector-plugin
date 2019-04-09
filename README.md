@@ -11,5 +11,5 @@ mvn hpi:run
 To build a snapshot of the plugin for installation in an existing Jenkins instance:
 
 ```
-mvn package
+mvn hpi:hpi
 ```
